@@ -343,7 +343,7 @@ class HomeViewController: BaseViewController, UIScrollViewDelegate, UINavigation
     
     func initView(){
         loadingShow()
-        initNav("佣有")
+        initNav("佣友")
 //        initTableView()
         //右滑动设置
 //        let swipe = UISwipeGestureRecognizer(target: self, action: Selector("swipe"))
