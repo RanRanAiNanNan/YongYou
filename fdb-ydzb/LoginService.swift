@@ -186,6 +186,50 @@ class LoginService: NSObject {
         )
         
     }
+    //忘记密码获取验证码
+    func wanghuoQuYanZhengMa(mobile: String, flag: String,codeType: String,calback: (data: String) -> ()) {
+        
+        let str = "mobile=" + mobile + "&" + "flag=" + flag + "&" + "codeType=" + codeType + "&" + "key=" + "3e9bb86c6980c3b79e5b936ce10b9b96"
+        let hash = str.sha256()
+        
+        RestAPI.sendPostRequest("/login/sendVerifyCode", params: ["mobile": mobile,"flag":flag,"codeType":codeType,"sign":hash],
+            success: {
+                data in
+                var json = JSON(data!)
+                let status = json["isSuccess"]
+                print(json)
+                //                KGXToast.showToastWithMessage(json["errors"][0].stringValue, duration: ToastDisplayDuration.LengthShort)
+                if status == true{
+                    
+                    if json["errors"][0].stringValue == "error"{
+                        KGXToast.showToastWithMessage("手机号不存在", duration: ToastDisplayDuration.LengthShort)
+                        calback(data:"失败")
+                    }else{
+                        KGXToast.showToastWithMessage(json["errors"][0].stringValue, duration: ToastDisplayDuration.LengthShort)
+                        calback(data:"成功")
+                    }
+                }else{
+                    //                   KGXToast.showToastWithMessage(json["errors"][0].stringValue, duration: ToastDisplayDuration.LengthShort)
+                    calback(data:"失败")
+                }
+                print(json)
+                
+            },
+            error: {
+                error in
+                switch error {
+                case .ConnectionFailed:
+                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+                    KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
+                default:
+                    calback(data:"其他错误")
+                    KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
+                }
+            }
+        )
+        
+    }
+
 //忘记密码
     func wangJiMiMa(mobile: String, verifyCode: String,passwd: String,calback: (data: String) -> ()) {
         

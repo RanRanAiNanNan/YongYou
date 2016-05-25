@@ -82,10 +82,12 @@ class GeRenService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+                    let arr = NSArray()
+                    calback(data:arr)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+                    let arr = NSArray()
+                    calback(data:arr)
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }

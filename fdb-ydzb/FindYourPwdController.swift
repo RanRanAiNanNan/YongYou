@@ -105,15 +105,16 @@ class FindYourPwdController:BaseViewController {
     
     func requestAuthCode() {
         if checkMobile() {return}
-        authCodeBtn.enabled = false
+        
 //        authCodeBtn.backgroundColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
 //        authCodeBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 
 //        findYourPwdService.getAuthCode(B.FYP_SEND_AUTHCODE, params: ["mm" : userDefaultsUtil.enMobile(mobileTf.text!)], calback: {
 //            msg in
 //            if msg.isEmpty {
-        loginService.huoQuYanZhengMa(mobileTf.text!, flag: "forget_code", codeType: "3", calback: { (data) -> () in
+        loginService.wanghuoQuYanZhengMa(mobileTf.text!, flag: "forget_code", codeType: "3", calback: { (data) -> () in
             if data == "成功"{
+                self.authCodeBtn.enabled = false
                 self.timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(1), target: self, selector: Selector("tickDown"), userInfo: nil, repeats: true)
                 
   

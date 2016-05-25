@@ -50,7 +50,7 @@ class DingDanXiangQingNewViewController:BaseViewController ,FixAddressViewContro
     var orderId: String!
     var addrId : String!
     var proId : String!
-    
+    var messageBtn: UIBarButtonItem!
     let fenLei = ProductMainService.getInstance()
     
       override func viewDidLoad() {
@@ -70,6 +70,17 @@ class DingDanXiangQingNewViewController:BaseViewController ,FixAddressViewContro
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "first_dingDan"), forBarMetrics: UIBarMetrics.Default)
+        
+        let msgBtn = UIButton()
+        let backImage = UIImage(named: "peizi_return_icon")
+        msgBtn.frame = CGRectMake(0, 0, backImage!.size.width, backImage!.size.height)
+        msgBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        msgBtn.setImage(backImage, forState: UIControlState.Normal)
+        msgBtn.addTarget(self, action: "messageClick", forControlEvents: UIControlEvents.TouchUpInside)
+        //var backBtnItem = UIBarButtonItem(customView: backBtn)
+        messageBtn = UIBarButtonItem(customView: msgBtn)
+        self.navigationItem.leftBarButtonItem = messageBtn
+        
         self.navigationController?.navigationBar.tintColor = B.NAV_TITLE_CORLOR
         
         print(orderId)
@@ -186,6 +197,10 @@ class DingDanXiangQingNewViewController:BaseViewController ,FixAddressViewContro
         }
         
     }
+    func messageClick(){
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     func initView(){
         
         self.navigationController?.navigationBar.topItem?.title = ""
