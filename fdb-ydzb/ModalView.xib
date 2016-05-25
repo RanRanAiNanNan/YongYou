@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tcX-jT-eoT" customClass="ModalView" customModule="ydzbapp_hybrid" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ModalView" translatesAutoresizingMaskIntoConstraints="NO" id="EDf-bK-x6Y">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="400"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-j1-lH5">
+                            <rect key="frame" x="0.0" y="340" width="280" height="60"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.61960784313725492" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="WnI-ig-dUA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="关闭">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="handleCloseButton:" destination="tcX-jT-eoT" eventType="touchUpInside" id="tMY-4M-HDv"/>
+                            </connections>
+                        </button>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBj-3O-EVI">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="345"/>
+                            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </webView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Fs6-Oq-Iqq">
+                            <rect key="frame" x="130" y="191" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="SBj-3O-EVI" firstAttribute="leading" secondItem="EDf-bK-x6Y" secondAttribute="leading" id="KPK-DL-yJh"/>
+                        <constraint firstAttribute="centerX" secondItem="Fs6-Oq-Iqq" secondAttribute="centerX" id="Mxh-AT-1Wz"/>
+                        <constraint firstItem="SBj-3O-EVI" firstAttribute="top" secondItem="EDf-bK-x6Y" secondAttribute="top" id="PoX-mA-ZdV"/>
+                        <constraint firstItem="uCC-j1-lH5" firstAttribute="top" secondItem="SBj-3O-EVI" secondAttribute="bottom" constant="-5" id="VIK-T8-D2n"/>
+                        <constraint firstItem="uCC-j1-lH5" firstAttribute="leading" secondItem="EDf-bK-x6Y" secondAttribute="leading" id="Ydi-jH-3oz"/>
+                        <constraint firstAttribute="trailing" secondItem="uCC-j1-lH5" secondAttribute="trailing" id="cKo-Th-Z3J"/>
+                        <constraint firstAttribute="bottom" secondItem="SBj-3O-EVI" secondAttribute="bottom" constant="5" id="dtE-Mr-41H"/>
+                        <constraint firstAttribute="centerY" secondItem="Fs6-Oq-Iqq" secondAttribute="centerY" id="g4l-xp-jvT"/>
+                        <constraint firstAttribute="trailing" secondItem="SBj-3O-EVI" secondAttribute="trailing" id="ljE-7i-Fpp"/>
+                        <constraint firstAttribute="bottom" secondItem="uCC-j1-lH5" secondAttribute="bottom" id="tHr-wg-fds"/>
+                        <constraint firstAttribute="bottom" secondItem="SBj-3O-EVI" secondAttribute="bottom" constant="-4" id="ykh-Vs-thy"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="dtE-Mr-41H"/>
+                            <exclude reference="ykh-Vs-thy"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EDf-bK-x6Y" secondAttribute="trailing" id="52Y-Vn-oOP"/>
+                <constraint firstItem="EDf-bK-x6Y" firstAttribute="top" secondItem="tcX-jT-eoT" secondAttribute="top" id="D5Z-aB-rav"/>
+                <constraint firstItem="EDf-bK-x6Y" firstAttribute="leading" secondItem="tcX-jT-eoT" secondAttribute="leading" id="IJn-z9-rEf"/>
+                <constraint firstAttribute="bottom" secondItem="EDf-bK-x6Y" secondAttribute="bottom" id="PBf-Da-a1g"/>
+                <constraint firstAttribute="bottom" secondItem="EDf-bK-x6Y" secondAttribute="bottom" id="o5D-QS-59g"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="o5D-QS-59g"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="bottomButton" destination="uCC-j1-lH5" id="c4f-Oz-f9H"/>
+                <outlet property="contentView" destination="EDf-bK-x6Y" id="Xg6-Y8-hGL"/>
+                <outlet property="infoWebView" destination="SBj-3O-EVI" id="OGH-Ec-OXs"/>
+                <outlet property="loadingAv" destination="Fs6-Oq-Iqq" id="avQ-kg-rBf"/>
+            </connections>
+            <point key="canvasLocation" x="-127" y="345"/>
+        </view>
+    </objects>
+</document>

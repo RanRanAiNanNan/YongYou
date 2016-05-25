@@ -1,0 +1,45 @@
+PODS:
+  - Alamofire (3.0.1)
+  - CryptoSwift (0.2.3)
+  - ImagePlayerView (1.1.2)
+  - SBJson (4.0.2)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SwiftyDrop (2.4.1)
+  - SwiftyJSON (2.3.2)
+  - UMengAnalytics (3.6.6)
+  - UMengSocial (5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0.0)
+  - CryptoSwift (~> 0.2.1)
+  - ImagePlayerView
+  - SBJson (~> 4.0.2)
+  - SDWebImage
+  - SwiftyDrop (~> 2.4.1)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - UMengAnalytics
+  - UMengSocial (~> 5.0)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
+  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
+  ImagePlayerView: 127c82f198721aa7bcad57f87598cd125043aa84
+  SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SwiftyDrop: 54a30c4edd51be9863429c3ad2ad4108eb7b7814
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65
+  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
+
+COCOAPODS: 0.39.0
