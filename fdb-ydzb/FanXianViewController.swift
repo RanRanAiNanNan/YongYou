@@ -37,6 +37,7 @@ class FanXianViewController:BaseViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.loadingShow()
         geRenService.tiXian { (data) -> () in
             if let hm = data as? TiXianModel{
                 self.view1.hidden = false
@@ -51,7 +52,7 @@ class FanXianViewController:BaseViewController {
                 self.bankId = hm.bankId
                 self.myView.hidden = true
                 self.int = 100
-                
+              self.loadingHidden()
             }else{
                 self.view1.hidden = true
                 self.view2.hidden = true
@@ -60,6 +61,7 @@ class FanXianViewController:BaseViewController {
                 self.myView.hidden = false
                 self.int = 0
 //                print("zhaozhoahzoahzoahzoahozhozha")
+                 self.loadingHidden()
             }
         }
         

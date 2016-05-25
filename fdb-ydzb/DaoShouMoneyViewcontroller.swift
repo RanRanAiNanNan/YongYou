@@ -24,9 +24,10 @@ class DaoShouMoneyViewcontroller:BaseViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+//        self.loadingShow()
         geRenService.yuE { (data) -> () in
             if (data as? NSArray)?.count != 0{
-             
+             self.loadingHidden()
             self.dic = (data as? NSArray)!
             let str = self.dic[0]
             print("\(str)")
@@ -63,6 +64,11 @@ class DaoShouMoneyViewcontroller:BaseViewController {
 
 
     @IBAction func tiXian(sender: AnyObject) {
+        
+        if self.dic.count == 0{
+            
+        }else{
+        
         print(self.dic[1] as! CGFloat)
         let oneStoryBoard:UIStoryboard = UIStoryboard(name: "My", bundle: NSBundle.mainBundle())
         let rpvc:FanXianViewController = oneStoryBoard.instantiateViewControllerWithIdentifier("FanXianViewController") as! FanXianViewController
@@ -76,7 +82,7 @@ class DaoShouMoneyViewcontroller:BaseViewController {
         self.navigationController?.pushViewController(rpvc, animated: true)
 
     }
-
+    }
 
 
 

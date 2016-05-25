@@ -52,14 +52,13 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
         self.loadingHidden()
         self.my_lable_money.text = "￥0.00"
         }else{
-        
         homeService.my {
             (data) -> () in
-            self.loadingHidden()
             if let hm = data as? MyModel {
+                self.loadingHidden()
                 self.phote = hm.photoUrl
                 self.name11 = hm.name
-                self.allIncome = hm.allIncome
+                self.allIncome = "\(hm.allIncome)"
                 self.regMobile = hm.regMobile
                 print(self.name11)
                 self.name.text = self.name11
@@ -71,7 +70,7 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
                     }
                 }
 
-                if hm.allIncome == ""{
+                if hm.allIncome == 0{
                    self.my_lable_money.text = "￥0.00"
                 }else{
                 self.my_lable_money.text = "￥\(hm.allIncome)"
@@ -228,11 +227,11 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
                     if let hm = data as? MyModel {
                         self.phote = hm.photoUrl
                         self.name11 = hm.name
-                        self.allIncome = hm.allIncome
+                        self.allIncome = "\(hm.allIncome)"
                         print(self.name11)
                         self.name.text = self.name11
                         
-                        if hm.allIncome == ""{
+                        if hm.allIncome == 0{
                             self.my_lable_money.text = "￥0.00"
                         }else{
                             self.my_lable_money.text = "￥\(hm.allIncome)"
@@ -253,6 +252,10 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
     }
 
     @IBAction func daoShouJinE(sender: AnyObject) {
+        
+        if self.name.text == ""{
+            KGXToast.showToastWithMessage("无网络连接", duration: ToastDisplayDuration.LengthShort)
+        }else{
         
         if !userDefaultsUtil.isLoggedIn(){
             KGXToast.showToastWithMessage("请登录账号", duration: ToastDisplayDuration.LengthShort)
@@ -275,8 +278,9 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
                     let rpvc:DaoShouMoneyViewcontroller = oneStoryBoard.instantiateViewControllerWithIdentifier("DaoShouMoneyViewcontroller") as! DaoShouMoneyViewcontroller
                     rpvc.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(rpvc, animated: true)
-                    
-            })
+            
+                })
+            }
         }
     }
 
@@ -392,6 +396,10 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
     
     @IBAction func fenXiang(sender: AnyObject) {
         print("分享")
+        if self.name.text == ""{
+            KGXToast.showToastWithMessage("无网络连接", duration: ToastDisplayDuration.LengthShort)
+        }else{
+        
         if !userDefaultsUtil.isLoggedIn(){
             let twoStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let twoController:LoginViewController = twoStoryBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
@@ -423,8 +431,8 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
         UMSocialData.defaultData().extConfig.sinaData.shareImage = UIImage(named: "referral_share_icon")
         UMSocialData.defaultData().extConfig.sinaData.snsName = "银多资本"
         //QQ与Qzone
-        UMSocialData.defaultData().extConfig.qqData.url = url
-        UMSocialData.defaultData().extConfig.qzoneData.url = url
+        UMSocialData.defaultData().extConfig.qqData.url = "http://192.168.0.159/yy/login.html" //url
+        UMSocialData.defaultData().extConfig.qzoneData.url = "http://192.168.0.159/yy/login.html"//url
         UMSocialData.defaultData().extConfig.qqData.title = title
         UMSocialData.defaultData().extConfig.qzoneData.title = title
         UMSocialData.defaultData().extConfig.qqData.shareText  = shareText
@@ -432,6 +440,7 @@ class MyCenterViewController: BaseViewController , UMSocialUIDelegate, UIImagePi
         UMSocialData.defaultData().extConfig.qqData.shareImage  = shareImage
         UMSocialData.defaultData().extConfig.qzoneData.shareImage = shareImage
 
+        }
         }
     }
     

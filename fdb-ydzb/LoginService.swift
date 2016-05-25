@@ -202,7 +202,7 @@ class LoginService: NSObject {
                 if status == true{
                     
                     if json["errors"][0].stringValue == "error"{
-                        KGXToast.showToastWithMessage("手机号不存在", duration: ToastDisplayDuration.LengthShort)
+                        KGXToast.showToastWithMessage("手机号未注册", duration: ToastDisplayDuration.LengthShort)
                         calback(data:"失败")
                     }else{
                         KGXToast.showToastWithMessage(json["errors"][0].stringValue, duration: ToastDisplayDuration.LengthShort)
@@ -219,10 +219,10 @@ class LoginService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -251,10 +251,10 @@ class LoginService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }

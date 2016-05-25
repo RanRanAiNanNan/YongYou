@@ -96,6 +96,7 @@ class HomeService: NSObject {
         RestAPI.sendPostRequest("/myInfo/myInfo", params: ["userId": userDefaultsUtil.getUid()!,"sign":hash],
             success: {
                 data in
+                
                 let my = MyModel()
                 var json = JSON(data!)
                 let status = json["isSuccess"]
@@ -107,7 +108,7 @@ class HomeService: NSObject {
                 my.photoUrl = dd["photoUrl"].stringValue
                 userDefaultsUtil.setAvatarLink(my.photoUrl)
                 my.name = dd["name"].stringValue
-                my.allIncome = dd["allIncome"].stringValue
+                my.allIncome = dd["allIncome"].floatValue
                 my.regMobile = dd["regMobile"].stringValue
                 print(dd["allIncome"])
                 calback(data:my)
@@ -117,10 +118,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -155,10 +156,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -189,10 +190,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -239,10 +240,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                   calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                   calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                   calback(data:"其他错误")
+//                   calback(data:"其他错误")
                    KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -275,10 +276,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:"连接不可用")
+//                    calback(data:"连接不可用")
                     KGXToast.showToastWithMessage("连接不可用", duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -297,10 +298,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -320,10 +321,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthLongLong)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthLong)
                 }
             }
@@ -436,10 +437,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }
@@ -511,10 +512,10 @@ class HomeService: NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthShort)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthShort)
                 }
             }

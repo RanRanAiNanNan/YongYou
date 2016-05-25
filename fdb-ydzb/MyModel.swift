@@ -13,7 +13,7 @@ class MyModel: NSObject {
     
     var photoUrl = ""
     var name = ""
-    var allIncome = ""
+    var allIncome : Float!
     var regMobile = ""
     
 }

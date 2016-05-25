@@ -255,6 +255,7 @@ class LoginViewController: BaseViewController {
             zhuCeMiMaTF.userInteractionEnabled = true
             tuiJianRenShouJiHao.userInteractionEnabled = true
         }else if textField.tag == 10040{
+            zhuCeYanZhengTF.userInteractionEnabled = true
             tuiJianRenShouJiHao.userInteractionEnabled = true
             zhuCeMobileTF.userInteractionEnabled = true
             zhuCeMiMaTF.userInteractionEnabled = true
@@ -387,7 +388,11 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func zhuCeButton(sender: AnyObject) {
-        
+        zhuCeMobileTF.resignFirstResponder()
+        zhuCeYanZhengTF.resignFirstResponder()
+        zhuCeMiMaTF.resignFirstResponder()
+        tuiJianRenShouJiHao.resignFirstResponder()
+
         if zhuCeMobileTF.text == "" {
             KGXToast.showToastWithMessage("手机号不能为空", duration: ToastDisplayDuration.LengthShort)
         }else if zhuCeMiMaTF.text == "" {

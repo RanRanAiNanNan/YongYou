@@ -61,10 +61,10 @@ class MessageService:NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthLongLong)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthLong)
                 }
             }
@@ -96,10 +96,10 @@ class MessageService:NSObject {
                 error in
                 switch error {
                 case .ConnectionFailed:
-                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
+//                    calback(data:B.NETWORK_CONNECTION_ABNORMAL)
                     KGXToast.showToastWithMessage(B.NETWORK_CONNECTION_ABNORMAL, duration: ToastDisplayDuration.LengthLongLong)
                 default:
-                    calback(data:"其他错误")
+//                    calback(data:"其他错误")
                     KGXToast.showToastWithMessage("其他错误", duration: ToastDisplayDuration.LengthLong)
                 }
             }

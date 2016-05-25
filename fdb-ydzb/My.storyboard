@@ -1719,7 +1719,7 @@
                                             <action selector="shenFen:" destination="lpD-cI-MdH" eventType="touchUpInside" id="M6m-wW-oYO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已认证" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-0D-cQF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-0D-cQF">
                                         <rect key="frame" x="505" y="0.0" width="45" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="6jQ-kY-mg8"/>
@@ -1895,7 +1895,7 @@
                                             <action selector="address:" destination="lpD-cI-MdH" eventType="touchUpInside" id="0by-jl-aV0"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已填写" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-bN-YJJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-bN-YJJ">
                                         <rect key="frame" x="505" y="0.0" width="45" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="Ugt-uH-VjB"/>
@@ -1947,7 +1947,7 @@
                                             <action selector="addBank:" destination="lpD-cI-MdH" eventType="touchUpInside" id="7Zc-Zp-bQo"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已添加" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-lL-fE5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-lL-fE5">
                                         <rect key="frame" x="505" y="0.0" width="45" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="63A-BL-FRP"/>

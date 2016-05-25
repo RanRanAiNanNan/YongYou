@@ -68,6 +68,7 @@ class FixMiMaViewController:BaseViewController {
                 KeychainWrapper.removeObjectForKey(kSecValueData as String)
                 let twoStoryBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                 let twoController:LoginViewController = twoStoryBoard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+                userDefaultsUtil.setForgetGesturePassword("aaa")
                 twoController.hidesBottomBarWhenPushed = true
                 self.presentViewController(twoController, animated: true, completion: nil)
 //              self.navigationController?.popViewControllerAnimated(true)  

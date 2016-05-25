@@ -117,8 +117,9 @@ class HomeViewController: BaseViewController, UIScrollViewDelegate, UINavigation
         self.loadingShow()
         homeService.main(userDefaultsUtil.getUid()!, type: "1") {
             (data) -> () in
-            self.loadingHidden()
+           
             if let hm = data as? HomeModel {
+                 self.loadingHidden()
                 self.buttonArr = hm.productType
                 self.banners = hm.homeBanners
                 self.lieBiao = hm.homeProductInfos
@@ -137,9 +138,9 @@ class HomeViewController: BaseViewController, UIScrollViewDelegate, UINavigation
             if userDefaultsUtil.isLoggedIn(){
             self.homeService.my {
                 (data) -> () in
-                self.loadingHidden()
+                
                 if let hm = data as? MyModel {
-
+                    self.loadingHidden()
                     if hm.photoUrl == ""{
                         self.avatarBtn.setImage(UIImage(named: "Avatar@2x(1)"), forState: UIControlState.Normal)
                     }else{
@@ -282,6 +283,7 @@ class HomeViewController: BaseViewController, UIScrollViewDelegate, UINavigation
         hotWebView.scalesPageToFit = true
         hotWebView.loadRequest(request)
         hotWebView.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+        hotWebView.scrollView.scrollEnabled = false
     }
     
     //加载banner

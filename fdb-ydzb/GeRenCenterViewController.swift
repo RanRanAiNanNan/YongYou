@@ -167,7 +167,9 @@ class GeRenCenterViewController:BaseViewController, UIImagePickerControllerDeleg
 //        userDefaultsUtil.setMobile(my.photoUrl)
         
 //        AlertUtil.simpleAlert(self, title: "退出提示", msg: "确定退出登录吗？", okBtnTitle: "取消", cancelBtnTitle: "确定")
-
+        if self.bankLB.text == ""{
+            KGXToast.showToastWithMessage("无网络连接", duration: ToastDisplayDuration.LengthShort)
+        }else{
         let alertView = YoYoAlertView(title: "退出提示", message: "确定退出登录吗？", cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
         alertView.show()
         //获取点击事件
@@ -188,7 +190,7 @@ class GeRenCenterViewController:BaseViewController, UIImagePickerControllerDeleg
             
             
         }
-
+        }
         
     }
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -206,6 +208,8 @@ class GeRenCenterViewController:BaseViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func shenFen(sender: AnyObject) {
+        if self.bankLB.text == ""{
+        }else{
         if self.renZheng == 3{
             
         }else{
@@ -214,6 +218,7 @@ class GeRenCenterViewController:BaseViewController, UIImagePickerControllerDeleg
         rpvc.hidesBottomBarWhenPushed = true
         rpvc.renZheng = self.renZheng
         self.navigationController?.pushViewController(rpvc, animated: true)
+        }
         }
     }
     @IBAction func address(sender: AnyObject) {
@@ -233,13 +238,15 @@ class GeRenCenterViewController:BaseViewController, UIImagePickerControllerDeleg
         
     }
     @IBAction func addBank(sender: AnyObject) {
-        
+        if self.bankLB.text == ""{
+            
+        }else{
         let oneStoryBoard:UIStoryboard = UIStoryboard(name: "My", bundle: NSBundle.mainBundle())
         let rpvc:TianJiaBankViewController = oneStoryBoard.instantiateViewControllerWithIdentifier("TianJiaBankViewController") as! TianJiaBankViewController
         rpvc.bankInt = self.bankInt
         rpvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(rpvc, animated: true)
-
+        }
     }
     
     @IBAction func myNameButton(sender: AnyObject) {
